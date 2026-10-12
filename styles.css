@@ -1,0 +1,153 @@
+```css
+/* Reset all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Website background and font */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #f093fb
+    );
+    color: white;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+nav h2 {
+    color: #ffe082;
+    font-size: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffe082;
+}
+
+/* Main heading */
+h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    text-align: center;
+    margin: 40px 0 20px;
+    background: linear-gradient(
+        90deg, #ffffff, #ffe082, #ffb6e6
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #f4edff;
+}
+
+/* Buttons */
+button,
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(
+        45deg, #ff6b6b, #feca57
+    );
+    color: #24133f;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards */
+.card {
+    width: 280px;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.card h2 {
+    color: #ffe082;
+    margin-bottom: 15px;
+}
+
+/* Card container */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+```
