@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>विजयादशमी 2026 – रावण दहन</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{--b1:#2a0a3a;--b2:#8a1c1c;--b3:#ff8a1f;--ink:#fff3d6;--gold:#ffc93c;--card:#fff4dc;--cink:#5a1414;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--b1:#12041c;--b2:#5e1010;--b3:#c9600d;--ink:#ffeec4;--card:#2b0d12;--cink:#ffe9b8}}
+:root[data-theme="dark"]{--b1:#12041c;--b2:#5e1010;--b3:#c9600d;--ink:#ffeec4;--card:#2b0d12;--cink:#ffe9b8}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:linear-gradient(180deg,var(--b1),var(--b2) 62%,var(--b3));background-attachment:fixed;color:var(--ink);font-family:'Yatra One',Georgia,serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#bg{z-index:0}#fx{z-index:3}
+.floor{position:fixed;left:50%;bottom:-34vmin;width:150vmin;height:150vmin;margin-left:-75vmin;z-index:1;transform:perspective(500px) rotateX(68deg);opacity:.6;pointer-events:none}
+.floor svg{width:100%;height:100%;animation:spin 45s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+main{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:10px 14px 40px;text-align:center}
+.toran{display:flex;gap:4px;font-size:26px;transform-origin:50% 0;animation:sw 3s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+h1{margin:6px 0 0;font-weight:400;font-size:clamp(44px,13vw,76px);line-height:1.1;background:linear-gradient(#fff2a8,#ffb300 55%,#ff5a1f);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(255,140,0,.6));animation:tilt 6s ease-in-out infinite}
+@keyframes tilt{0%,100%{transform:perspective(700px) rotateY(-14deg)}50%{transform:perspective(700px) rotateY(14deg)}}
+.sub{margin:6px 0 0;font-size:17px;opacity:.95}
+.stage{position:relative;width:min(100%,420px);height:310px;margin:6px 0 0}
+#rav{position:absolute;left:50%;bottom:20px;width:190px;height:275px;margin-left:-95px;transform-origin:50% 100%;filter:drop-shadow(0 0 14px rgba(255,170,0,.5))}
+.ram{position:absolute;left:2%;bottom:24px;font-size:56px}
+.arrow{position:absolute;left:14%;bottom:150px;font-size:30px;color:var(--gold);opacity:0;text-shadow:0 0 10px #ff6a00}
+.stage.shoot .arrow{animation:shoot .9s ease-in forwards}
+@keyframes shoot{0%{left:14%;opacity:1}100%{left:46%;opacity:1}}
+.ground{position:absolute;left:0;right:0;bottom:12px;height:8px;border-radius:8px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.fl{position:absolute;font-size:30px;opacity:0;transition:opacity 1.5s;pointer-events:none}
+.stage.burn .fl{opacity:1;animation:fl .5s ease-in-out infinite alternate}
+@keyframes fl{from{transform:scale(.8) rotate(-6deg)}to{transform:scale(1.4) translateY(-12px) rotate(6deg)}}
+.stage.burn #rav{animation:shake .12s linear infinite;filter:brightness(1.4) sepia(.5) drop-shadow(0 0 25px #ff4d00)}
+@keyframes shake{0%,100%{transform:translateX(-2px) rotate(-.8deg)}50%{transform:translateX(2px) rotate(.8deg)}}
+.stage.fall #rav{animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:scaleY(.05) scaleX(1.3);opacity:0;filter:grayscale(1) brightness(.4)}}
+#win{margin:0;min-height:30px;font-size:21px;color:var(--gold);opacity:0;transition:opacity 1s}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0}
+.btn{font:inherit;font-size:16px;padding:12px 18px;border:0;border-radius:999px;background:linear-gradient(135deg,#ffc93c,#ff6a1f);color:#4a0d0d;box-shadow:0 4px 0 #8a2a00,0 8px 20px rgba(0,0,0,.4);cursor:pointer}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #8a2a00}
+.btn:focus-visible,#nm:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.box{width:min(100%,340px);padding:16px;border:2px solid var(--gold);border-radius:20px;background:rgba(40,0,20,.45);backdrop-filter:blur(6px)}
+.box p{margin:0 0 10px;font-size:17px}
+#nm{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:12px;margin-bottom:12px;text-align:center;border:2px solid var(--gold);border-radius:14px;background:rgba(255,255,255,.14);color:var(--ink)}
+#nm::placeholder{color:var(--ink);opacity:.6}
+.credit{margin-top:22px;font-size:20px;line-height:1.7}
+.fire span{display:inline-block;background:linear-gradient(#fff2a8,#ffb300 40%,#ff4d00 75%,#a00000);background-size:100% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 5px #ff6a00);animation:rise .7s backwards,flick .9s ease-in-out infinite alternate;animation-delay:calc(var(--i)*45ms),calc(var(--i)*70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.4)}}
+@keyframes flick{from{background-position:0 0;transform:translateY(0)}to{background-position:0 100%;transform:translateY(-2px) skewX(-4deg)}}
+.pop{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:16px;background:rgba(10,0,20,.7);backdrop-filter:blur(4px)}
+.pop[hidden]{display:none}
+.card{width:min(100%,380px);box-sizing:border-box;padding:22px 20px;text-align:center;background:var(--card);color:var(--cink);border:3px solid var(--gold);border-radius:24px;box-shadow:0 0 40px rgba(255,150,0,.6);animation:flip .6s cubic-bezier(.2,1.2,.4,1)}
+@keyframes flip{from{transform:perspective(700px) rotateY(-90deg) scale(.6);opacity:0}}
+.card h2{margin:4px 0 10px;font-weight:400;font-size:26px}
+.card p{margin:0 0 10px;font-size:18px;line-height:1.6}
+.card .tip{font-size:15px;opacity:.85}
+.card .fire{font-size:21px;margin:8px 0 4px}
+.card .btn{font-size:14px;padding:10px 14px}
+@media (prefers-reduced-motion:reduce){h1,.toran,.floor svg{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="floor"><svg id="rg" viewBox="0 0 100 100" aria-hidden="true"></svg></div>
+<canvas id="fx"></canvas>
+<main>
+  <div class="toran" aria-hidden="true">🪔🌼🪔🌼🪔🌼🪔🌼🪔</div>
+  <h1>विजयादशमी</h1>
+  <p class="sub">दशहरा · 20 अक्टूबर 2026 · बुराई पर अच्छाई की जीत 🚩</p>
+  <div class="stage" id="st">
+    <div class="ram" aria-hidden="true">🏹</div>
+    <div class="arrow" aria-hidden="true">━━━➤</div>
+    <svg id="rav" viewBox="0 0 200 290" aria-label="रावण"></svg>
+    <div class="ground"></div>
+  </div>
+  <p id="win">सत्य की विजय हुई! जय श्री राम 🚩</p>
+  <div class="row">
+    <button class="btn" id="db">🔥 रावण दहन</button>
+    <button class="btn" id="rk">🚀 रॉकेट</button>
+    <button class="btn" id="an">🎇 अनार</button>
+  </div>
+  <div class="box">
+    <p>अपना नाम लिखिए</p>
+    <input id="nm" maxlength="30" placeholder="जैसे: Rahul" autocomplete="off">
+    <button class="btn" id="go">🎆 शुभकामना पाएं</button>
+  </div>
+  <div class="credit">
+    <div class="fire">Made by Deepak Thakur</div>
+    <div class="fire">Wishes by Deepak Thakur</div>
+  </div>
+</main>
+<div class="pop" id="pop" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="pn">
+    <div style="font-size:44px">🚩</div>
+    <h2 id="pn"></h2>
+    <p id="pw"></p>
+    <p class="tip" id="pt"></p>
+    <div class="fire" id="sg">Wishes by Deepak Thakur</div>
+    <div class="row">
+      <button class="btn" id="nx">🔄 नई शुभकामना</button>
+      <button class="btn" id="sh">📲 शेयर</button>
+      <button class="btn" id="cl">बंद करें</button>
+    </div>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id),bg=$('bg'),fx=$('fx'),g=bg.getContext('2d'),c=fx.getContext('2d'),st=$('st');
+let W,H,P=[],R=[];
+function rs(){const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;for(const k of[bg,fx]){k.width=W*d;k.height=H*d}g.setTransform(d,0,0,d,0,0);c.setTransform(d,0,0,d,0,0)}
+rs();addEventListener('resize',rs);
+/* rangoli floor */
+(function(){const cols=['#ffc93c','#ff5a1f','#e0245e','#7a2cff','#18b5a0'];let s='';
+for(let r=0;r<5;r++){const n=8+r*4,Rr=40-r*7;for(let i=0;i<n;i++)s+=`<ellipse cx="50" cy="${50-Rr}" rx="${8-r}" ry="7" fill="${cols[r]}" opacity=".85" transform="rotate(${i*360/n+r*7} 50 50)"/>`}
+$('rg').innerHTML=s+'<circle cx="50" cy="50" r="6" fill="#fff2a8"/>'})();
+/* Ravan with 10 heads */
+(function(){let s='<rect x="85" y="118" width="30" height="30" fill="#1f6f46"/><rect x="75" y="235" width="22" height="50" fill="#7a1010"/><rect x="103" y="235" width="22" height="50" fill="#7a1010"/><rect x="70" y="150" width="60" height="90" rx="10" fill="#b3261e"/><rect x="18" y="148" width="22" height="75" rx="9" fill="#b3261e"/><rect x="160" y="148" width="22" height="75" rx="9" fill="#b3261e"/><rect x="40" y="138" width="120" height="22" rx="10" fill="#d4a017"/>';
+const hd=(x,y)=>`<circle cx="${x}" cy="${y}" r="15" fill="#2f8f5b"/><path d="M${x-12} ${y-10}l4-12 4 8 4-10 4 10 4-8 4 12z" fill="#ffc93c"/><circle cx="${x-5}" cy="${y-2}" r="2.6" fill="#fff"/><circle cx="${x+5}" cy="${y-2}" r="2.6" fill="#fff"/><circle cx="${x-5}" cy="${y-2}" r="1.2" fill="#c00"/><circle cx="${x+5}" cy="${y-2}" r="1.2" fill="#c00"/><path d="M${x-6} ${y+7}q6 5 12 0" stroke="#300" stroke-width="1.5" fill="none"/>`;
+s+=hd(100,50);[55,85,115,145].forEach(x=>s+=hd(x,80));[40,70,100,130,160].forEach(x=>s+=hd(x,110));
+$('rav').innerHTML=s;
+for(let i=0;i<16;i++){const f=document.createElement('span');f.className='fl';f.textContent='🔥';f.style.left=(30+Math.random()*40)+'%';f.style.bottom=(30+Math.random()*230)+'px';f.style.animationDelay=(Math.random()*.5)+'s';st.appendChild(f)}})();
+/* fire text */
+function fire(el){const t=el.textContent;el.textContent='';[...t].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch===' '?'\u00a0':ch;s.style.setProperty('--i',i);el.appendChild(s)})}
+document.querySelectorAll('.fire').forEach(fire);
+/* fireworks */
+function burst(x,y,n=70,h){h=h??Math.random()*360;for(let i=0;i<n;i++){const a=Math.random()*6.283,s=Math.random()*5+1;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,h:h+Math.random()*40,d:.012+Math.random()*.012})}}
+function rocket(x,ty){R.push({x:x??Math.random()*W,y:H,vy:-(8+Math.random()*4),ty:ty??H*(.15+Math.random()*.35),h:Math.random()*360})}
+function fountain(x){let t=0;const id=setInterval(()=>{for(let i=0;i<6;i++)P.push({x,y:H-10,vx:(Math.random()-.5)*2.5,vy:-(6+Math.random()*5),l:1,h:30+Math.random()*30,d:.02,gr:.15});if(++t>60)clearInterval(id)},30)}
+/* 3D embers flying toward the viewer */
+const S=[];for(let i=0;i<130;i++)S.push({x:(Math.random()-.5)*2,y:(Math.random()-.5)*2,z:Math.random(),h:20+Math.random()*40});
+let mx=0,my=0;
+addEventListener('pointermove',e=>{mx=e.clientX/W-.5;my=e.clientY/H-.5});
+addEventListener('deviceorientation',e=>{if(e.gamma!=null){mx=e.gamma/60;my=(e.beta-45)/60}});
+function loop(){
+g.clearRect(0,0,W,H);
+for(const s of S){s.z-=.004;if(s.z<=.02){s.z=1;s.x=(Math.random()-.5)*2;s.y=(Math.random()-.5)*2}
+const k=1/s.z,x=W/2+(s.x+mx*.6)*W*.25*k,y=H/2+(s.y+my*.6)*H*.25*k;
+g.fillStyle=`hsla(${s.h},100%,${55+20*(1-s.z)}%,${1-s.z*.6})`;g.beginPath();g.arc(x,y,Math.min(6,k),0,6.283);g.fill()}
+c.globalCompositeOperation='destination-out';c.fillStyle='rgba(0,0,0,.18)';c.fillRect(0,0,W,H);c.globalCompositeOperation='lighter';
+for(const r of R){r.y+=r.vy;r.vy*=.985;P.push({x:r.x,y:r.y,vx:0,vy:1,l:.6,h:40,d:.05});if(r.y<r.ty||r.vy>-1.5){r.dead=1;burst(r.x,r.y,80,r.h)}}
+R=R.filter(r=>!r.dead);
+for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vy+=p.gr||.06;p.vx*=.99;p.l-=p.d;c.fillStyle=`hsla(${p.h},100%,60%,${Math.max(p.l,0)})`;c.beginPath();c.arc(p.x,p.y,2,0,6.283);c.fill()}
+P=P.filter(p=>p.l>0);requestAnimationFrame(loop)}
+loop();
+setInterval(()=>{if(!document.hidden){rocket();if(Math.random()<.3)fountain(Math.random()*W)}},1400);
+addEventListener('pointerdown',e=>{if(!e.target.closest('button,input'))rocket(e.clientX,e.clientY)});
+/* Ravan Dahan */
+let busy=0;const win=$('win'),db=$('db');
+function dahan(){if(busy)return;busy=1;st.className='stage shoot';win.style.opacity=0;
+setTimeout(()=>{st.className='stage burn';const r=st.getBoundingClientRect();let n=0;const t=setInterval(()=>{burst(r.left+r.width/2+(Math.random()-.5)*120,r.top+40+Math.random()*180,40);if(Math.random()<.5)rocket();if(++n>10)clearInterval(t)},450)},1000);
+setTimeout(()=>{st.className='stage fall';for(let i=0;i<5;i++)setTimeout(rocket,i*250);fountain(W*.2);fountain(W*.8);win.style.opacity=1},6000);
+setTimeout(()=>{busy=0;db.textContent='🔁 फिर से रावण दहन'},8000)}
+db.onclick=dahan;$('rk').onclick=()=>{for(let i=0;i<3;i++)setTimeout(rocket,i*200)};$('an').onclick=()=>{fountain(W*.25);fountain(W*.5);fountain(W*.75)};
+setTimeout(dahan,2500);
+/* wishes popup */
+const WS=[
+["आपके जीवन से हर बुराई का रावण जलकर राख हो और सुख, समृद्धि व सफलता का उजाला आपके द्वार पर आए।","सीख: अहंकार कितना भी बड़ा हो, सत्य के आगे झुकना ही पड़ता है।"],
+["भगवान श्री राम की कृपा से आपके सारे सपने पूरे हों और घर में हमेशा खुशियों की रौनक बनी रहे।","सीख: मर्यादा और धैर्य ही सबसे बड़ी शक्ति है।"],
+["इस दशहरे क्रोध, लोभ, ईर्ष्या और अहंकार को जला दीजिए और प्रेम, दया व अच्छाई को अपनाइए।","सीख: असली रावण हमारे अंदर होता है, उसे हराना ही असली जीत है।"],
+["माँ दुर्गा की शक्ति और श्री राम की मर्यादा हर संकट से आपकी रक्षा करे। विजयादशमी मुबारक!","सीख: नौ दिन की शक्ति पूजा का फल दसवें दिन विजय के रूप में मिलता है।"],
+["बुराई कितनी भी ताकतवर हो, अच्छाई की एक छोटी सी किरण उसे हरा देती है। आपका हर दिन जीत का दिन हो!","सीख: सच्चाई के रास्ते पर चलने वाले की कभी हार नहीं होती।"],
+["आपके जीवन में दीपों जैसी रोशनी, पटाखों जैसी खुशियाँ और रिश्तों में मिठास बनी रहे। जय श्री राम!","सीख: अपनों के साथ त्योहार मनाना ही असली खुशी है।"]];
+const pop=$('pop'),nm=$('nm');let wi=0,who='';
+function show(){const w=WS[wi%WS.length];$('pn').textContent='🙏 '+who+' जी 🙏';$('pw').textContent=w[0];$('pt').textContent=w[1];fire($('sg'));pop.hidden=false;
+for(let i=0;i<4;i++)setTimeout(rocket,i*250);fountain(W*.15);fountain(W*.85)}
+function go(){const n=nm.value.trim();if(!n){nm.focus();nm.placeholder='पहले अपना नाम लिखिए 🙏';return}who=n;wi=Math.floor(Math.random()*WS.length);show()}
+$('go').onclick=go;nm.onkeydown=e=>{if(e.key==='Enter')go()};
+$('nx').onclick=()=>{wi++;show()};
+$('cl').onclick=()=>{pop.hidden=true};
+pop.onclick=e=>{if(e.target===pop)pop.hidden=true};
+addEventListener('keydown',e=>{if(e.key==='Escape')pop.hidden=true});
+$('sh').onclick=()=>{const w=WS[wi%WS.length][0],t='🚩 '+who+' जी, विजयादशमी की हार्दिक शुभकामनाएं!\n'+w+'\n— Wishes by Deepak Thakur\n'+location.href;
+if(navigator.share)navigator.share({text:t}).catch(()=>{});else window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank')};
+</script>
+</body>
+</html>
