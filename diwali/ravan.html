@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Dussehra | Made by Deepak Thakur</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #ffd36a;
+    --orange: #ff6a00;
+    --red: #ff2020;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(ellipse at 50% 75%, #702000 0%, transparent 48%),
+        linear-gradient(180deg, #10051f 0%, #400817 50%, #10030a 100%);
+}
+
+#sky {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 24px 16px 35px;
+    text-align: center;
+    perspective: 1000px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 17px;
+    border: 1px solid #ffc85c;
+    border-radius: 30px;
+    color: #ffe4a3;
+    background: #8b210d55;
+    letter-spacing: 2px;
+    font-size: 11px;
+    box-shadow: 0 0 20px #ff720055;
+}
+
+h1 {
+    margin-top: 23px;
+    font-size: clamp(37px, 8vw, 76px);
+    line-height: 1.12;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow:
+        0 2px 0 #c75c00,
+        0 5px 0 #792100,
+        0 0 20px #ff8c00,
+        0 0 45px #ff3000;
+    animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { filter: brightness(0.9); }
+    to { filter: brightness(1.25); }
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: clamp(15px, 3.8vw, 21px);
+    color: #ffdfaa;
+    line-height: 1.6;
+}
+
+.om {
+    margin: 15px auto 0;
+    font-size: 45px;
+    color: #ffcf5c;
+    text-shadow: 0 0 25px #ff7200;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-9px) rotateY(15deg); }
+}
+
+.scene {
+    position: relative;
+    height: 225px;
+    max-width: 580px;
+    margin: 12px auto 18px;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid #ffb34d55;
+    background:
+        radial-gradient(ellipse at 50% 100%, #ff5a001c, transparent 60%),
+        linear-gradient(180deg, #16091c77, #25060a88);
+    box-shadow: inset 0 0 40px #ff510022, 0 15px 45px #0005;
+}
+
+.moon {
+    position: absolute;
+    top: 25px;
+    right: 16%;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background: #ffe6a5;
+    box-shadow: 0 0 30px #ffb84d99;
+}
+
+.ravan {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 175px;
+    width: 220px;
+    animation: ravanFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 13px #ff4800);
+}
+
+@keyframes ravanFloat {
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.head {
+    position: absolute;
+    width: 38px;
+    height: 43px;
+    border-radius: 50% 50% 42% 42%;
+    background: linear-gradient(135deg, #ffdb79, #d96b18);
+    border: 2px solid #ffec91;
+    box-shadow: 0 0 10px #ff7200;
+}
+
+.head::before {
+    content: "👑";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 23px;
+}
+
+.head::after {
+    content: "• •";
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    font-size: 11px;
+    color: #6d1000;
+    white-space: nowrap;
+}
+
+.head:nth-child(1) { left: 0; top: 50px; }
+.head:nth-child(2) { left: 23px; top: 20px; }
+.head:nth-child(3) { left: 48px; top: 5px; }
+.head:nth-child(4) { left: 74px; top: 0; }
+.head:nth-child(5) { left: 91px; top: 0; }
+.head:nth-child(6) { left: 115px; top: 5px; }
+.head:nth-child(7) { left: 140px; top: 20px; }
+.head:nth-child(8) { left: 164px; top: 50px; }
+.head:nth-child(9) { left: 82px; top: 42px; }
+
+.body-ravan {
+    position: absolute;
+    top: 68px;
+    left: 77px;
+    width: 65px;
+    height: 66px;
+    border-radius: 16px 16px 5px 5px;
+    background: linear-gradient(135deg, #ffcb54, #a51d05);
+    border: 2px solid #ffda70;
+}
+
+.body-ravan::before,
+.body-ravan::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 17px;
+    height: 69px;
+    border-radius: 10px;
+    background: linear-gradient(#ffce5b, #a3230a);
+    border: 1px solid #ffce5b;
+}
+
+.body-ravan::before { left: -26px; transform: rotate(25deg); }
+.body-ravan::after { right: -26px; transform: rotate(-25deg); }
+
+.legs {
+    position: absolute;
+    top: 128px;
+    left: 87px;
+    width: 15px;
+    height: 35px;
+    background: #d58b26;
+    box-shadow: 31px 0 #d58b26;
+    border-radius: 0 0 7px 7px;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 17px;
+    background: linear-gradient(#ff7812, #631000);
+    box-shadow: 0 -5px 22px #ff510055;
+}
+
+.form-card {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    border: 1px solid #ffc85c77;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #54101acb, #17091de8);
+    box-shadow: 0 15px 50px #0005, inset 0 0 25px #ff8c0010;
+    transform: rotateX(2deg);
+}
+
+.form-card h2 {
+    color: #ffdb83;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.form-card p {
+    color: #eac8c0;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 17px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ffbc57;
+    border-radius: 12px;
+    outline: none;
+    color: white;
+    background: #1b0716;
+    font-size: 16px;
+    text-align: center;
+}
+
+input::placeholder { color: #c9a9a9; }
+
+button {
+    width: 100%;
+    margin-top: 13px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4b1200;
+    background: linear-gradient(100deg, #ffb52e, #fff0a3, #ff7a18);
+    box-shadow: 0 0 22px #ff8c0055;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px #ff9e00aa;
+}
+
+.footer {
+    margin-top: 26px;
+    color: #e7b8a1;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.footer strong { color: #ffd56d; }
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: 18px;
+    align-items: center;
+    justify-content: center;
+    background: #08020df0;
+    backdrop-filter: blur(9px);
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: flex;
+    animation: appear 0.45s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px 23px;
+    border-radius: 24px;
+    text-align: center;
+    border: 2px solid #ffd36a;
+    background:
+        radial-gradient(ellipse at top, #6b1b13, transparent 75%),
+        linear-gradient(160deg, #24091d, #10051b);
+    box-shadow: 0 0 60px #ff650055;
+    animation: pop 0.55s cubic-bezier(.2, 1.5, .5, 1);
+}
+
+@keyframes pop {
+    from { transform: scale(0.6) rotateX(25deg); }
+    to { transform: scale(1) rotateX(0); }
+}
+
+.modal-card .emoji { font-size: 45px; }
+
+.modal-card h2 {
+    margin: 14px 0;
+    color: #ffd36a;
+    font-size: clamp(25px, 6vw, 35px);
+    overflow-wrap: anywhere;
+}
+
+.modal-card h3 {
+    color: #ffab52;
+    margin: 12px 0;
+}
+
+.modal-card p {
+    color: #ffe6d5;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 12px 0;
+}
+
+.quote {
+    padding: 15px;
+    margin-top: 17px;
+    border-radius: 13px;
+    background: #ffb52e12;
+    border: 1px solid #ffb52e55;
+    color: #ffe6a5;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 20px;
+    color: #ffd36a;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.close-btn {
+    margin-top: 18px;
+}
+
+@media (max-width: 400px) {
+    .scene { height: 200px; }
+    .ravan { transform: translateX(-50%) scale(.85); transform-origin: bottom center; }
+    @keyframes ravanFloat {
+        50% { transform: translateX(-50%) translateY(-5px) scale(.85); }
+    }
+    .form-card { padding: 21px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<main class="page">
+
+    <div class="badge">🪔 VIJAYADASHAMI • 2026 🪔</div>
+
+    <div class="om">ॐ</div>
+
+    <h1>Happy<br>Dussehra!</h1>
+
+    <p class="subtitle">
+        अधर्म पर धर्म की विजय 🏹<br>
+        बुराई पर अच्छाई की जीत 🔥
+    </p>
+
+    <section class="scene" aria-label="Animated Ravan Dahan celebration">
+        <div class="moon"></div>
+
+        <div class="ravan">
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="head"></div>
+            <div class="body-ravan"></div>
+            <div class="legs"></div>
+        </div>
+
+        <div class="ground"></div>
+    </section>
+
+    <section class="form-card">
+        <h2>✨ Celebrate With Us ✨</h2>
+
+        <p>
+            Apna naam likho aur pao ek special<br>
+            Dussehra greeting! 🎁
+        </p>
+
+        <form id="wishForm">
+            <input
+                type="text"
+                id="friendName"
+                placeholder="Enter your name..."
+                maxlength="50"
+                autocomplete="given-name"
+                aria-label="Enter your name"
+                required
+            >
+
+            <button type="submit">
+                🔥 Reveal My Wishes 🎆
+            </button>
+        </form>
+    </section>
+
+    <div class="footer">
+        ✨ अच्छाई की हमेशा जीत होती है ✨<br>
+        <strong>Made with ❤️ by Deepak Thakur</strong><br>
+        Wishes by Deepak Thakur 🏹
+    </div>
+
+</main>
+
+<div class="modal" id="wishModal" role="dialog"
+     aria-modal="true" aria-labelledby="wishTitle">
+
+    <div class="modal-card">
+
+        <div class="emoji">🪔🎆🏹</div>
+
+        <h2 id="wishTitle">Happy Dussehra!</h2>
+
+        <h3 id="personalGreeting"></h3>
+
+        <p>
+            इस विजयादशमी पर आपके जीवन से हर बुराई दूर हो,
+            हर मुश्किल आसान हो और खुशियों की नई शुरुआत हो।
+        </p>
+
+        <div class="quote">
+            "जिस प्रकार भगवान श्रीराम ने अधर्म पर विजय प्राप्त की,
+            उसी प्रकार आपके जीवन में भी सत्य, साहस और अच्छाई की
+            हमेशा जीत हो।"
+            <br><br>
+            ✨ बुराई का अंत हो, अच्छाई का आरंभ हो! ✨
+        </div>
+
+        <p>
+            आपके जीवन में सुख, शांति, समृद्धि और सफलता
+            हमेशा बनी रहे।
+            <br>
+            आपको और आपके परिवार को विजयादशमी की
+            हार्दिक शुभकामनाएँ! 🙏
+        </p>
+
+        <div class="signature">
+            🔥 रावण दहन • बुराई पर अच्छाई की विजय 🔥<br>
+            Wishes by Deepak Thakur ❤️
+        </div>
+
+        <button type="button" class="close-btn" id="closeModal">
+            🎉 Celebrate Again
+        </button>
+
+    </div>
+</div>
+
+<script>
+const canvas = document.getElementById("sky");
+const ctx = canvas.getContext("2d");
+
+let W, H, particles = [], rockets = [];
+let lastLaunch = 0;
+let animationId;
+let running = true;
+
+function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+const colors = [
+    "#ff3b30", "#ff9f0a", "#ffd60a",
+    "#30d158", "#64d2ff", "#bf5af2",
+    "#ff66c4", "#ffffff"
+];
+
+function launchRocket() {
+    rockets.push({
+        x: Math.random() * W,
+        y: H + 10,
+        targetY: H * (0.12 + Math.random() * 0.43),
+        vx: (Math.random() - 0.5) * 1.7,
+        vy: -(7 + Math.random() * 4),
+        color: colors[Math.floor(Math.random() * colors.length)]
+    });
+}
+
+function explode(x, y, color) {
+    const count = 65 + Math.floor(Math.random() * 40);
+
+    for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1 + Math.random() * 4.2;
+
+        particles.push({
+            x, y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            color: Math.random() < 0.2
+                ? colors[Math.floor(Math.random() * colors.length)]
+                : color,
+            life: 55 + Math.random() * 35,
+            maxLife: 90,
+            size: 1 + Math.random() * 2.5
+        });
+    }
+}
+
+function animate(now = 0) {
+    if (!running) return;
+
+    ctx.clearRect(0, 0, W, H);
+
+    if (now - lastLaunch > 850 + Math.random() * 900) {
+        launchRocket();
+        lastLaunch = now;
+    }
+
+    rockets = rockets.filter(r => r.y > r.targetY);
+
+    rockets.forEach(r => {
+        r.x += r.vx;
+        r.y += r.vy;
+
+        ctx.beginPath();
+        ctx.moveTo(r.x, r.y + 13);
+        ctx.lineTo(r.x, r.y);
+        ctx.strokeStyle = r.color;
+        ctx.lineWidth = 2;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = r.color;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+    });
+
+    const reached = rockets.filter(r => r.y <= r.targetY);
+    rockets = rockets.filter(r => r.y > r.targetY);
+
+    reached.forEach(r => explode(r.x, r.y, r.color));
+
+    particles = particles.filter(p => p.life > 0);
+
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.985;
+        p.vy *= 0.985;
+        p.vy += 0.035;
+        p.life--;
+
+        ctx.globalAlpha = Math.max(0, p.life / p.maxLife);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowBlur = 9;
+        ctx.shadowColor = p.color;
+        ctx.fill();
+    });
+
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+
+    animationId = requestAnimationFrame(animate);
+}
+
+animate();
+
+const form = document.getElementById("wishForm");
+const input = document.getElementById("friendName");
+const modal = document.getElementById("wishModal");
+const greeting = document.getElementById("personalGreeting");
+const closeButton = document.getElementById("closeModal");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = input.value.trim();
+
+    if (!name) {
+        input.focus();
+        return;
+    }
+
+    // textContent prevents the entered name from being interpreted as HTML.
+    greeting.textContent = "Dear " + name + " ❤️";
+
+    modal.classList.add("show");
+    closeButton.focus();
+
+    // Extra fireworks for the personalized greeting.
+    for (let i = 0; i < 4; i++) {
+        setTimeout(() => {
+            explode(
+                W * (0.15 + Math.random() * 0.7),
+                H * (0.12 + Math.random() * 0.35),
+                colors[Math.floor(Math.random() * colors.length)]
+            );
+        }, i * 180);
+    }
+});
+
+function closeGreeting() {
+    modal.classList.remove("show");
+    input.focus();
+}
+
+closeButton.addEventListener("click", closeGreeting);
+
+modal.addEventListener("click", function(event) {
+    if (event.target === modal) closeGreeting();
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && modal.classList.contains("show")) {
+        closeGreeting();
+    }
+});
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+        running = false;
+        cancelAnimationFrame(animationId);
+    } else if (!running) {
+        running = true;
+        lastLaunch = 0;
+        animate();
+    }
+});
+</script>
+
+</body>
+</html>
